@@ -1,4 +1,4 @@
-# NIDUC 2 PROJEKT
+# NIDUC 2 - PROJEKT
 # FEC (Forward Error Correction)
  autorzy: 
  1. Daniel Leśniewicz
