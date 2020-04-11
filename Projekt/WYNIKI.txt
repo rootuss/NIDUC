@@ -1,0 +1,13 @@
+
+----ZBIORCZE WYNIKI----
+
+
+--Potrajanie--
+Przesano bitów: 26
+Iloœæ b³êdnie przes³anych bitów: 9
+BER wynosi: 34.6154%
+
+--BCH--
+Przesano bitów: 26
+Iloœæ b³êdnie przes³anych bitów: 10
+BER wynosi: 38.4615%
