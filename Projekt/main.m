@@ -1,7 +1,10 @@
 % Jest to g³ówny skrypt programu
  
 % Wczytanie danych od uzytkownika:
-numberOfBits = input("Podaj ilosc przesylanych bitow (26): ");
+%numberOfBits = input("Podaj ilosc przesylanych bitow (26): ");
+numberOfBits=26;
+fprintf('\nPrzeslano %d bitow!\n\n', numberOfBits); 
+
 % Wygenerowanie wektora z podana liczba bitow
 table_gen = generator(numberOfBits);
     %disp(table_gen)
