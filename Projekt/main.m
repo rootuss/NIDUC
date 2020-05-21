@@ -2,7 +2,7 @@
  
 % Wczytanie danych od uzytkownika:
 %numberOfBits = input("Podaj ilosc przesylanych bitow (26): ");
-numberOfBits=26;
+numberOfBits=65519;
 fprintf('\nPrzeslano %d bitow!\n\n', numberOfBits); 
 
 % Wygenerowanie wektora z podana liczba bitow
@@ -21,7 +21,7 @@ tableDecode = decoderTriple(tableDisturbance);
  
  
 %----------czêœæ BCH----------
-m = 5; %z prezentacji
+m = 16; %z prezentacji
 n = 2^m - 1;
 k = numberOfBits;
 %odczytane z tableki z prezentacji z NIDUC 1 (dla 26 elementów m to 5)
@@ -46,6 +46,7 @@ fclose(fid);
 %wyliczenie niewiadomych
 errors = errorCount(table_gen,tableDecode);
 BER_Triple = (errors/numberOfBits)*100;
+overflow_Triple = abs(length(tableTriple)-length(table_gen))/length(table_gen);
  
 %zapis wyników do pliku WYNIKI.txt
 fileID = fopen('WYNIKI.txt', 'at');
@@ -56,10 +57,15 @@ fprintf(fileID, '\n--Potrajanie--');
 fprintf(fileID, '\nPrzesano bitów: %d', numberOfBits);
 fprintf(fileID, '\nIloœæ b³êdnie przes³anych bitów: %d', errors);
 fprintf(fileID, '\nBER wynosi: %0.4f%%', BER_Triple);
+fprintf(fileID, '\nNadmiar kodowy wynosi: %.2f', overflow_Triple);
+
  
 errorsBCH = errorCount(table_gen,tableDecodeBCH.x);
 BER_BCH = (errorsBCH/numberOfBits)*100;
+overflow_BCH = abs(length(tableBCH.x)-length(table_gen))/length(table_gen);
 fprintf(fileID, '\n\n--BCH--');
 fprintf(fileID, '\nPrzesano bitów: %d', numberOfBits);
 fprintf(fileID, '\nIloœæ b³êdnie przes³anych bitów: %d', errorsBCH);
 fprintf(fileID, '\nBER wynosi: %0.4f%%', BER_BCH);
+fprintf(fileID, '\nNadmiar kodowy wynosi: %0.10f', overflow_BCH);
+%fprintf('Nadmiar kodowy: %0.10f\n', overflow_BCH);

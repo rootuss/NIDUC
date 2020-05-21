@@ -2,7 +2,7 @@
 function tableDisturbance = kanal(table)
 
 % Prawdopodobienstwo wystapienia bledu
-BSCprobability = 0.4;
+BSCprobability = 0.001;
 
 % Tablica zawiera zaklocona transmisje
 tableDisturbance = zeros(1, length(table));

@@ -3,11 +3,13 @@
 
 
 --Potrajanie--
-Przesano bitów: 26
-Iloœæ b³êdnie przes³anych bitów: 6
-BER wynosi: 23.0769%
+Przesano bitów: 65519
+Iloœæ b³êdnie przes³anych bitów: 0
+BER wynosi: 0.0000%
+Nadmiar kodowy wynosi: 2.00
 
 --BCH--
-Przesano bitów: 26
-Iloœæ b³êdnie przes³anych bitów: 12
-BER wynosi: 46.1538%
+Przesano bitów: 65519
+Iloœæ b³êdnie przes³anych bitów: 67
+BER wynosi: 0.1023%
+Nadmiar kodowy wynosi: 0.0002442040
